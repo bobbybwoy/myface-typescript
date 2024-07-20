@@ -20,6 +20,12 @@
         </article>
     <% }); %>
 </main>
+<%if (postList.next) { %>
+    <a href="<%= postList.next %>">Next</a>
+<% } %>
+<%if (postList.previous) { %>
+    <a href="<%= postList.previous %>">Previous</a>
+<% } %>
 </body>
 <%- include('_footer') -%>
 </html>
