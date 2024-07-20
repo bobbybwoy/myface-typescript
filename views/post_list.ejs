@@ -3,13 +3,23 @@
 <%- include('_header') -%>
 <body>
 <h1>Posts</h1>
-<ol>
+<main>
     <% postList.results.forEach(function(post) {%>
-        <li>
-            <%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
-        </li>
+        <article>
+            <img src="<%= post.imageUrl %>" aria-label="An image"/>
+            <section aria-label="A section with a message">
+                <%= post.message %>
+            </section>
+            <section aria-label="A section with the credits">
+                <%= post.postedBy.name %>
+                <%= format(post.createdAt, "dd/MM/yyyy HH:mm:ss") %>
+            </section>
+            <section aria-label="A section with a count of likes/dislikes">
+                Likes <%= post.likedBy.length %> Dislikes <%= post.dislikedBy.length %>
+            </section>
+        </article>
     <% }); %>
-</ol>
+</main>
 </body>
 <%- include('_footer') -%>
 </html>
