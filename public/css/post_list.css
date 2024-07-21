@@ -1,0 +1,59 @@
+/* General */
+img {
+    width: 100%;
+}
+
+.pl-button-group {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; */
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.pl-thumbnail {
+    background-color: aquamarine;
+}
+/* Desktop */
+.pl-container {
+    margin: 0 400px;
+}
+
+.pl-main-article {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px;
+}
+
+/* Tablet */
+@media screen and (max-width: 1280px) {
+    .pl-main-article {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+    }
+
+    .pl-container { margin: 0; }
+}
+
+/* Mobile - based on iPhone 12/13 Pro Max - landscape */
+@media screen and (max-width: 926px) {
+    .pl-main-article {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 20px;
+    }
+}
+
+/* Mobile - based on iPhone 12/13 Pro Max - portrait */
+@media screen and (max-width: 428px) {
+    .pl-thumbnail {
+        width: 100%;
+    }
+
+    .pl-main-article {
+        display: block;
+    }
+}

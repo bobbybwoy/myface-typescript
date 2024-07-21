@@ -3,19 +3,30 @@
 <%- include('_header') -%>
 <body>
 <h1>Posts</h1>
-<main>
+<main class="pl-container">
     <% postList.results.forEach(function(post) {%>
-        <article>
-            <img src="<%= post.imageUrl %>" aria-label="An image"/>
-            <section aria-label="A section with a message">
-                <%= post.message %>
+        <article class="pl-main-article">
+            <section class="pl-thumbnail">
+                <img src="<%= post.imageUrl %>" aria-label="An image"/>
             </section>
-            <section aria-label="A section with the credits">
-                <%= post.postedBy.name %>
-                <%= format(post.createdAt, "dd/MM/yyyy HH:mm:ss") %>
-            </section>
-            <section aria-label="A section with a count of likes/dislikes">
-                Likes <%= post.likedBy.length %> Dislikes <%= post.dislikedBy.length %>
+            <section class="pl-body">
+                <section class="pl-message" aria-label="A section with a message">
+                    <%= post.message %>
+                </section>
+                <section class="pl-credits" aria-label="A section with the credits">
+                    <%= post.postedBy.name %>
+                    <%= format(post.createdAt, "dd/MM/yyyy HH:mm:ss") %>
+                </section>
+                <section class="pl-button-group" aria-label="A section with a count of likes/dislikes">
+                    <form action="/posts/<%= post.id %>/like" method="post">
+                        Likes <%= post.likedBy.length %>
+                        <button type="submit">Like</button>
+                    </form>
+                    <form action="/posts/<%= post.id %>/dislike" method="post">
+                        Dislikes <%= post.dislikedBy.length %>
+                        <button type="submit">Dislike</button>
+                    </form>
+                </section>
             </section>
         </article>
     <% }); %>

@@ -1,1 +1,47 @@
+/* Imports */
+@import url("./post_list.css"); /* Styling for post_list.ejs */
+
 /* Add your styles here. */
+:root {
+    /* Colours */
+    --app-background-colour: #252A38;;
+    --app-darker-background-colour: #151820;
+    --app-primary-colour: #ddd;
+    --app-foreground-colour: #DCDCDC
+
+    /* Padding */
+    /* --app-padding: 0; */
+
+    /* Margins */
+    /* --app-margin-small: 0;
+    --app-margin-large: 0; */
+
+    /* Font weights */
+    /* --app-lighter-font-weight: 0;
+    --app-bold-font-weight: 0;
+    --app-normal-font-weight: 0; */
+}
+
+body {
+    background-color: var(--app-background-colour);
+    color: var(--app-foreground-colour);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    background-color: var(--app-darker-background-colour);
+    padding: 20px 0px;
+    /* position: sticky;
+    top: 0; */
+}
+
+nav a {
+    color: var(--app-foreground-colour);
+    text-decoration: none;
+}
